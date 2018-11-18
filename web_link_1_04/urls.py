@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 import django_web.views
 
-urlpatterns = {
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', django_web.views.home),
     path('login/', django_web.views.login),
@@ -26,4 +26,4 @@ urlpatterns = {
     path('xianxia/', django_web.views.xianxia),
     path('kehuan/', django_web.views.kehuan),
 
-}
+]
