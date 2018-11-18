@@ -1,0 +1,125 @@
+/*top_start*/
+#logo {
+    border-radius : 5px ;
+    width: 200px;
+    height: 100px;
+    margin: 10px 10px auto;
+}
+
+div#top {
+    width: 800px;
+    height: 120px;
+    display : flex;
+    text-align: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+div#top_c1 {
+    width: 300px;
+    height: 120px;
+}
+
+div#sel{
+    width: 400px;
+    height: 120px;
+    display: inline;
+}
+
+div#l_r{
+    width: 100px;
+    height: 120px;
+    margin-top: 35px;
+}
+
+input#i_sel{
+    width: 300px;
+    height: 30px;
+    margin-top: 35px;
+
+}
+
+input#b_sel{
+    width: 40px;
+    height: 40px;
+    background-image: url("../img/sel_btn.JPG");
+    background-size: 100% 100%;
+}
+
+a:link{
+    color: black;
+    text-decoration: none;
+}
+
+a:visited{
+		color:black;
+		text-decoration:none;
+}
+
+a:hover{
+		color:blue;
+}
+/*top_end*/
+
+/*list_start*/
+div#list{
+    width: 800px;
+    height: 50px;
+    margin: auto;
+    background: cyan;
+}
+
+li.nav{
+    margin: 8px auto;
+    padding: 10px 30px;
+    float: left;
+    list-style: none;
+}
+/*list_end*/
+
+/*sort_start*/
+div.sort_book{
+    width: 800px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.sort_book_left{
+    width: 600px;
+    height: auto;
+    border: 1px solid black;
+}
+
+div.sort_book_right{
+    width: 180px;
+    height: auto;
+    border: 1px solid black;
+}
+
+ul.no_mar{
+   list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+li.book_name{
+    width: 200px;
+    list-style: none;
+    text-align: left;
+    float: left;
+    border-bottom: 1px dotted darkgray;
+    margin: 10px auto;
+}
+
+li.book_name2{
+    width: 180px;
+    list-style: none;
+    text-align: center;
+    float: left;
+    border-bottom: 1px dotted darkgray;
+    margin: 3px auto;
+}
+
+/*sort_start*/

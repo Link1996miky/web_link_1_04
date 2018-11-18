@@ -1,0 +1,56 @@
+body#bg{
+    background-image: url("../img/login.jpg");
+    background-size: cover;
+
+}
+
+div#u_div{
+    margin-top: 150px;
+    margin-left: 200px;
+    width: 400px;
+    height: auto;
+
+}
+
+span.prompt{
+    font-size: 25px;
+    color: mintcream;
+}
+
+span.br{
+    margin: 10px auto;
+    display: block;
+}
+
+input.btn{
+    margin: auto 20px 30px;
+    width: 120px;
+    font-size: 20px;
+}
+
+input.u_msg{
+    width: 250px;
+    height: 25px;
+    font-size: 25px;
+}
+
+a:link{
+    color: mintcream;
+    text-decoration: none;
+}
+
+a:visited{
+		color: mintcream;
+		text-decoration:none;
+}
+
+
+a#bh{
+    margin-left: 120px;
+    color: mintcream;
+    font-size: 25px;
+}
+
+input.tttt{
+    background: greenyellow;
+}

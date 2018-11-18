@@ -1,0 +1,45 @@
+body#bg{
+    background-image: url("../img/register.jpg");
+    background-size: cover;
+
+}
+
+div#rgs{
+    width: 400px;
+    height: 300px;
+    margin: 100px auto auto auto;
+}
+
+span.prompt{
+    font-size: 25px;
+    color: mintcream;
+}
+
+span.br{
+    margin: 10px auto;
+    display: block;
+}
+
+span#title{
+    padding: 100px;
+    font-size: 40px;
+    color: greenyellow;
+}
+
+input.u_msg{
+    width: 250px;
+    height: 25px;
+    font-size: 25px;
+}
+
+input.btn{
+    margin: auto 100px;
+    width: 120px;
+    font-size: 20px;
+}
+
+a#bh{
+    margin: auto 100px;
+    color: mintcream;
+    font-size: 25px;
+}

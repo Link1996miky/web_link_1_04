@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<link rel="stylesheet" href="{% static "css/login.css" %}" type="text/css" media="all">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body id="bg">
+<div id="u_div">
+    <form action="" method="post">
+        <span class="prompt">账号：</span><input class="u_msg" type="text" />
+        <span class="br"></span>
+        <span class="prompt">密码：</span><input class="u_msg" type="password" />
+        <span class="br"></span>
+        <span class="prompt">验证码:</span>
+        <span class="br"></span>
+        <input class="btn" type="submit" value="登录"/>
+        <input class="btn" type="button" value="忘记密码？"/>
+    </form>
+    <a id="bh" href="/home">返回主页</a>
+</div>
+</body>
+</html>
