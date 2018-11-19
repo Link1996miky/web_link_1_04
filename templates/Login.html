@@ -9,10 +9,14 @@
 </head>
 <body id="bg">
 <div id="u_div">
-    <form action="" method="post">
-        <span class="prompt">账号：</span><input class="u_msg" type="text" />
+    <form action="/login/" method="post">
+{#        {% if message %}#}
+{#            {{ message }}#}
+{#        {% endif %}#}
+        {% csrf_token %}
+        <span class="prompt">账号：</span><input name="name" class="u_msg" type="text" />
         <span class="br"></span>
-        <span class="prompt">密码：</span><input class="u_msg" type="password" />
+        <span class="prompt">密码：</span><input name="pw" class="u_msg" type="password" />
         <span class="br"></span>
         <span class="prompt">验证码:</span>
         <span class="br"></span>

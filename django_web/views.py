@@ -8,6 +8,21 @@ def home(request):
 
 
 def login(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        password = request.POST.get("pw")
+        if name and password:
+            name = name.strip()
+            password = password.strip()
+            try:
+                user = models.user_info_one.objects.get(name=name)
+                if password == user.password:
+                    return redirect('/home')
+                else:
+                    message = "密码错误"
+            except:
+                message = "用户名不存在"
+        return render(request, "Login.html", {'message': message})
     return render(request, "Login.html")
 
 
