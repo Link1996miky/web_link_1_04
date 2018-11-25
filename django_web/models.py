@@ -8,3 +8,4 @@ class user_info_one(models.Model):
     email = models.EmailField()
     memo = models.TextField()
 
+
