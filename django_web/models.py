@@ -9,3 +9,4 @@ class user_info_one(models.Model):
     memo = models.TextField()
 
 
+
