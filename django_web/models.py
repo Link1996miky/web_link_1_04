@@ -7,4 +7,3 @@ class user_info_one(models.Model):
     password = models.CharField(max_length=30)
     email = models.EmailField()
     memo = models.TextField()
-
