@@ -67,7 +67,7 @@ class Book(models.Model):
     )
 
     book_name = models.CharField(max_length=30, unique=True)
-    author = models.ForeignKey(Author)
+    author_name = models.ForeignKey('Author', on_delete=models.CASCADE)
     book_type = models.CharField(
         max_length=8,
         choices=BookType_choices,
@@ -89,8 +89,20 @@ class Book(models.Model):
 
 
 class Book_Detail(models.Model):
-    book = models.ForeignKey(on_delete=models.CASCADE)
+    book_name = models.ForeignKey('Author', on_delete=models.CASCADE)
     book_num = models.IntegerField()
     book_file = models.FileField(upload_to='book/')
 
+    def __str__(self):
+        return f'{self.book_name}_{self.book_num}'
+
+
+class Forum(models.Model):
+    book_name = models.ForeignKey('Book', on_delete=models.CASCADE)
+    user_name = models.ForeignKey('user_info_one', on_delete=models.CASCADE)
+    text = models.CharField(max_length=300)
+    time = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.id
 
