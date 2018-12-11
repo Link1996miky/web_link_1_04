@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django_web import models
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.hashers import make_password, check_password
 
 
 # Create your views here.
@@ -15,9 +16,10 @@ def home(request):
 
 
 def home_quit(request, quit_id):
+    # 移除session中的用户
     if quit_id:
         del request.session['name']
-        return render(request, 'Home.html',{'message': 'quit success'})
+        return render(request, 'Home.html', {'message': 'quit success'})
     return render(request, 'Home.html', {'message': 'is not quit!'})
 
 
@@ -30,7 +32,7 @@ def login(request):
             password = password.strip()
             try:
                 user = models.user_info_one.objects.get(user_id=name)
-                if password == user.password:
+                if check_password(password, user.password):
                     request.session['name'] = user.name
                     return redirect('/home')
                 else:
@@ -42,6 +44,22 @@ def login(request):
 
 
 def register(request):
+    if request.method == "POST":
+        uid = request.POST.get('id')
+        name = r'book' + uid
+        pw = request.POST.get('pw')
+        telephone = request.POST.get('tpn')
+        mail = request.POST.get('mail')
+        if uid and pw:
+            uid = uid.strip()
+            name = name.strip()
+            pw = pw.strip()
+            mail = mail.strip()
+        try:
+            models.user_info_one.objects.create(user_id=uid, name=name, password=make_password(pw), email=mail)
+            return render(request, 'Login.html', {'message': '注册成功，请登陆。'})
+        except:
+            return render(request, "Register.html", {'message': '用户已经存在'})
     return render(request, "Register.html")
 
 
@@ -58,5 +76,5 @@ def kehuan(request):
 
 
 @login_required
-def usr_message():
-    pass
+def usr_message(request):
+    return render(request, "Memo.html")

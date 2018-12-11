@@ -22,6 +22,7 @@ urlpatterns = [
     path('home/', django_web.views.home),
     path('login/', django_web.views.login),
     path('register/', django_web.views.register),
+    path('user/', django_web.views.usr_message),
     path('xuanhuan/', django_web.views.xuanhuan),
     path('xianxia/', django_web.views.xianxia),
     path('kehuan/', django_web.views.kehuan),

@@ -12,19 +12,20 @@
         <span id="title">用户注册</span>
         <span class="br"></span>
         <span class="prompt">账号：&emsp;</span>
-        <input class="u_msg" type="text" placeholder="请输入用户名" autofocus="autofocus">
+        <input class="u_msg" name="id" type="text" placeholder="请输入用户名" autofocus="autofocus">
         <span class="br"></span>
         <span class="prompt">密码：&emsp;</span>
-        <input class="u_msg" type="password" placeholder="请输入密码">
+        <input class="u_msg" name ="pw" type="password" placeholder="请输入密码">
         <span class="br"></span>
         <span class="prompt">e-mail：</span>
-        <input class="u_msg" type="email" placeholder="请输入邮箱" >
+        <input class="u_msg" name="mail" type="email" placeholder="请输入邮箱" >
         <span class="br"></span>
         <span class="prompt">手机号：</span>
-        <input class="u_msg" type="number" step=">=0" placeholder="请输入手机号">
+        <input class="u_msg" name ="tpn" type="number" step=">=0" placeholder="请输入手机号">
         <span class="br"></span>
         <input type="submit" class="btn" value="立即注册">
         </form>
+        {{ message }}
         <span class="br"></span>
         <a id="bh" href="/home">返回主页</a>
     </div>
