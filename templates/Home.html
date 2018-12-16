@@ -18,9 +18,16 @@
         </form>
     </div>
     <div id="l_r">
+
+        {% if not name %}
         <a href="/login">登录</a>
         <br>
         <a href="/register">注册</a>
+        {% else %}
+        <a href="/user">{{ name }}</a>
+        <br>
+        <a href="/user_quit">注销</a>
+        {% endif %}
     </div>
 </div>
 <div id="list">

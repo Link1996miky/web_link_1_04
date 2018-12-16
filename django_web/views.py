@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django_web import models
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password, check_password
 
 
@@ -15,11 +14,11 @@ def home(request):
     return render(request, 'Home.html')
 
 
-def home_quit(request, quit_id):
+def home_quit(request):
     # 移除session中的用户
-    if quit_id:
+    if request.session['name']:
         del request.session['name']
-        return render(request, 'Home.html', {'message': 'quit success'})
+        return redirect('/home')
     return render(request, 'Home.html', {'message': 'is not quit!'})
 
 
@@ -75,6 +74,16 @@ def kehuan(request):
     return render(request, "Kehuan.html")
 
 
-@login_required
+def Is_login(func):
+    def wrapper(request,*args,**kwargs):
+        is_login = request.session.get('name', None)
+        if is_login:
+            return func(request)
+        else:
+            return redirect('/login')
+    return wrapper
+
+
+@Is_login
 def usr_message(request):
     return render(request, "Memo.html")
